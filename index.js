@@ -18,6 +18,7 @@ console.log(mensagem);
 // arrays
 let metas = ['mayk', 'alô']
 let metas01 = [2, 'mayk']
+
 // concatenando valores
 console.log(metas[1] + ", " + metas[0]) 
 
