@@ -1,49 +1,38 @@
-// olá, mundo!
-console.log("olá, mundo!")
+const { select } = require('@inquirer/prompts')
 
+const start = async () => {
+    while (true){
 
-// variáveis - let
-let mensagens = "olá, mundo!"
+    const opcao = await select ({
+        message: "Menu >",
+        choices: [
+            {
+                name: "Cadastrar meta",
+                value: "cadastrar"
+            },
+            {
+                name: "Listar metas",
+                value: "listar"
+            },
+            {
+                name: "Sair",
+                value: "sair"
+            }
+        ]
+    })
 
-
-// variáveis - const
-const mensagem = "olá, eu"
-{
-    const mensagem = "olá, Mayk!"
-    console.log(mensagem)
-}
-console.log(mensagem);
-
-
-// arrays
-let metas = ['mayk', 'alô']
-let metas01 = [2, 'mayk']
-
-// concatenando valores
-console.log(metas[1] + ", " + metas[0]) 
-
-let metas02 = [
-    metas,
-    {
-        value: 'caminhar 20 minutos todos os dias',
-        checked: false
-    }
-]
-console.log(metas02[1].value);
-
-// objetos
-let meta = {
-    value: 'ler um livro por mês',
-    address: 2,
-    checked: true,
-    isChecked: () => {
-        console.log(info)
+    switch (opcao) {
+        case "cadastrar":
+            console.log("vamos cadastrar")
+            break
+        case "listar":
+            console.log("vamos listar")
+            break
+        case "sair":
+            console.log("Até a próxima!")
+            return    
     }
 }
-console.log(meta.value);
+}
 
-// function // arrow function
-const criarMeta = () => {}
-
-// named function
-function criarMetas() {}
+start()
